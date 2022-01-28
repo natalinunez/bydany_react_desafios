@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.estiloBrand {
+  font-size: 2rem;    
+  font-weight: bold;
+  color: #D69C79;  
+}
+
+.estiloMenu {
+  font-size: 1rem;    
+  color: #D69C79!important;
+  font-weight: bold;
+}
+
+.fondoColorNavBar {
+  background-color: #E4DCD8;
+}
+
+/*Estos son los colores de la marca by danny*/
+.colores {
+  color: #E4DCD8;
+  color: #D69C79;
+  color: #E7D0C1;
+  color: #C1B0A8;     
+}
+
+/* para pruebas */
+ /* .bordeAzul {
+     border: 2px solid #230985;    
+ }
+
+ .bordeRojo {
+     border: 2px solid #f70c0c;
+ }
+
+ .bordeAmarrillo {
+     border: 2px solid #f1c70c;
+ }
+
+ .bordeVerde {
+    border: 2px solid #08eb08;
+ }  */
