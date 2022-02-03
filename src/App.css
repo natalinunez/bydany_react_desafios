@@ -22,6 +22,40 @@ ul {
   background-color: #E4DCD8;
 }
 
+/* Ini ItemListContainer */
+.styleItemListContainer {
+  color: #D69C79;
+}
+/* Fin ItemListContainer */
+
+/* Ini Container de icono cart bag */
+.containerIconCart {
+  position: relative;
+}
+.styleCart {
+  color: #D69C79;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.styleBubble {
+  color: #D69C79;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50%;  
+  border: 1px solid #D69C79; 
+  background-color: #f0edec;
+  height: 1.2rem;
+  width: 1.2rem;
+  top: 10%;
+  left: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  position: absolute;  
+}
+/* Ini Container de icono cart bag */
+
 /*Estos son los colores de la marca by danny*/
 .colores {
   color: #E4DCD8;
@@ -32,17 +66,17 @@ ul {
 
 /* para pruebas */
  /* .bordeAzul {
-     border: 2px solid #230985;    
+     border: 1px solid #230985;    
  }
 
  .bordeRojo {
-     border: 2px solid #f70c0c;
+     border: 1px solid #f70c0c;
  }
 
  .bordeAmarrillo {
-     border: 2px solid #f1c70c;
+     border: 1px solid #f1c70c;
  }
 
  .bordeVerde {
-    border: 2px solid #08eb08;
+    border: 1px solid #08eb08;
  }  */
