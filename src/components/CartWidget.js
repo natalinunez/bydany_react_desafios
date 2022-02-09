@@ -6,6 +6,7 @@ const CartWidget = () => {
             <BsHandbag className="styleCart bordeAzul"/>
             <div className="styleBubble bordeRojo">2</div>
         </div>        
+ 
     );
 }
 

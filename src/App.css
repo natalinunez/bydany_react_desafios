@@ -32,6 +32,7 @@ ul {
 .containerIconCart {
   position: relative;
 }
+
 .styleCart {
   color: #D69C79;
   font-weight: bold;
@@ -64,6 +65,28 @@ ul {
   color: #C1B0A8;     
 }
 
+/* estilos por desafio de agregar contador */
+.styleButton {  
+  border: 1px solid #D69C79;
+  border-radius: 3px;
+  color: #D69C79;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.styleCartContainer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: baseline;
+  height: 1.5rem;
+
+}
+
+.styleSpan {
+  font-size: 0.9rem;
+  color: #D69C79;
+}
 /* para pruebas */
  /* .bordeAzul {
      border: 1px solid #230985;    
