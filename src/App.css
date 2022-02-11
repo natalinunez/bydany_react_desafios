@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #D69C79;
+}
+
 a {
   text-decoration: none;
 }
@@ -70,8 +77,9 @@ ul {
   border: 1px solid #D69C79;
   border-radius: 3px;
   color: #D69C79;
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  padding: 0 0.5rem;
 }
 
 .styleCartContainer {
@@ -79,14 +87,69 @@ ul {
   gap: 0.5rem;
   justify-content: flex-start;
   align-items: baseline;
-  height: 1.5rem;
-
+  height: 2.5rem;
+  margin: 0.5rem
 }
 
 .styleSpan {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: #D69C79;
 }
+/* styles for desafio 5: catalogo con Map y promises */
+.card__boton{    
+  font-size: 1.1rem;
+  /* color: red;  */
+  /* $colorTipograFooter;          */
+  background-color:  #E4DCD8;
+  /* &:hover{
+      color: $colorTipograFooter;
+      font-weight: bold;
+  } */
+  border-radius: 0.3rem;
+  border: 1px solid #D69C79;
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+}
+
+.styleName {
+  text-align: center;
+}
+
+.cardImage {
+  max-width: 13rem;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.cardProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 15rem;
+  margin: 1.5rem 0;
+  padding: 0.9rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #dfdad7;
+}
+
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.containerCards {
+  margin: 2rem auto;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));    */
+  grid-template-columns: repeat(3, 20rem);   
+  grid-column-gap: 0rem; 
+  width: 70vw;      
+  padding: 0 2rem;
+}
+
 /* para pruebas */
  /* .bordeAzul {
      border: 1px solid #230985;    

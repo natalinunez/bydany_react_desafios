@@ -5,8 +5,7 @@ const CartWidget = () => {
         <div className="containerIconCart bordeVerde " >        
             <BsHandbag className="styleCart bordeAzul"/>
             <div className="styleBubble bordeRojo">2</div>
-        </div>        
- 
+        </div>         
     );
 }
 
