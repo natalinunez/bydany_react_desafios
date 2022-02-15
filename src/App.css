@@ -150,6 +150,11 @@ ul {
   padding: 0 2rem;
 }
 
+/* para el ultimo mdesafio */
+.description_1 {
+  margin: 2rem auto;
+}
+
 /* para pruebas */
  /* .bordeAzul {
      border: 1px solid #230985;    

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Item from './Item';
-import {list, getList} from '../db';
+import {list, getList} from '../utils/db';
 import ItemList from './ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
