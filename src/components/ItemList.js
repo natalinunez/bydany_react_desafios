@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Item from './Item';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -6,11 +5,13 @@ const ItemList = ({listItems}) => {
 
     return (
         <>
-            <div className="containerCards bordeAzul" >  
+            {/* <div className="containerCards bordeAzul" >   */}
+            <div className="container d-flex justify-content-around row m-auto my-5 bordeAzul" >  
                 {   
                     listItems.map(item => 
                         <Item
-                            key = {item.id}        
+                            key = {item.id}  
+                            id =  {item.id}       
                             image = {item.image} 
                             name = {item.name}
                             price = {item.price}                        

@@ -9,44 +9,51 @@ a {
   text-decoration: none;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;  
+}
+
 ul {
   list-style: none;
 }
 
-.estiloBrand {
+/* Beginning: style for component NavBar */
+.styleBrand {
   font-size: 2rem;    
   font-weight: bold;
   color: #D69C79;  
 }
 
-.estiloMenu {
+.styleMenu {
   font-size: 1rem;    
   color: #D69C79!important;
   font-weight: bold;
 }
 
-.fondoColorNavBar {
+.BackgroundColor {
   background-color: #E4DCD8;
 }
+/* End: style for component NavBar */
 
-/* Ini ItemListContainer */
+/* Beginning: style for component CartWidget */
 .styleItemListContainer {
   color: #D69C79;
 }
-/* Fin ItemListContainer */
 
-/* Ini Container de icono cart bag */
+/* Beginning: style for component CartWidget */
 .containerIconCart {
   position: relative;
 }
 
-.styleCart {
+.styleIconCart {
   color: #D69C79;
   font-weight: bold;
   font-size: 2.5rem;
 }
 
-.styleBubble {
+.styleBubbleCart {
   color: #D69C79;
   font-weight: bold;
   font-size: 1rem;
@@ -62,98 +69,108 @@ ul {
   align-items: center ;
   position: absolute;  
 }
-/* Ini Container de icono cart bag */
+/* End: style for component CartWidget */
 
-/*Estos son los colores de la marca by danny*/
-.colores {
-  color: #E4DCD8;
-  color: #D69C79;
-  color: #E7D0C1;
-  color: #C1B0A8;     
+/* Beginning: style for component ItemList */
+.containerCards {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 20rem);   
+  grid-column-gap: 0rem; 
+  width: 70vw;      
+  padding: 0 2rem;
+}
+/* End: style for component ItemList */
+
+/* Beginning: style for component Item */
+.cardImage {
+  width: auto;
+  height: 20rem;
+  border-radius: 0.3rem;
 }
 
-/* estilos por desafio de agregar contador */
-.styleButton {  
-  border: 1px solid #D69C79;
-  border-radius: 3px;
-  color: #D69C79;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 0 0.5rem;
-}
-
-.styleCartContainer {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: flex-start;
-  align-items: baseline;
-  height: 2.5rem;
-  margin: 0.5rem
-}
-
-.styleSpan {
+.stylePrice {  
   font-size: 1.5rem;
-  color: #D69C79;
+  font-weight: bold;
 }
-/* styles for desafio 5: catalogo con Map y promises */
-.card__boton{    
+
+.cardButton {    
   font-size: 1.1rem;
-  /* color: red;  */
-  /* $colorTipograFooter;          */
   background-color:  #E4DCD8;
-  /* &:hover{
-      color: $colorTipograFooter;
-      font-weight: bold;
-  } */
   border-radius: 0.3rem;
   border: 1px solid #D69C79;
   font-weight: bold;
   padding: 0.5rem 0.5rem;
 }
 
-.styleName {
-  text-align: center;
+.cardHover:hover{  
+  transition: all 0.5s ease;
+  /*crece el card*/
+  transform: scale(1.05,1.05);
+  background-color: #f1ece8;
+}
+/* End: style for component Item */
+
+/* Beginning: style for component ItemDetail */
+.figura {
+  display: flex;
+  justify-content: center;
 }
 
-.cardImage {
-  max-width: 13rem;
+.imageDetail {
+  width: 25rem;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;  
 }
 
-.cardProduct {
-  display: flex;
+.cardDetailDescription {
+  margin: 0 2rem;
+}
+/* End: style for component ItemDetail */
+
+/* Beginning: style for component ItemCount */
+.containerCount {
+  display: flex;  
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 15rem;
-  margin: 1.5rem 0;
-  padding: 0.9rem 0;
-  border-radius: 0.5rem;
-  border: 1px solid #dfdad7;
+  gap: 1.8rem;
+  height: 2.5rem;  
 }
 
-.cardDescription {
+.containerMinusLess {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
 }
 
-.containerCards {
-  margin: 2rem auto;
-  display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));    */
-  grid-template-columns: repeat(3, 20rem);   
-  grid-column-gap: 0rem; 
-  width: 70vw;      
-  padding: 0 2rem;
+.buttonMinusPlus {  
+  border: 1px solid #D69C79;
+  border-radius: 3px;
+  color: #D69C79;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  width: 2.5rem;
 }
 
-/* para el ultimo mdesafio */
-.description_1 {
-  margin: 2rem auto;
+.styleSpan {
+  font-size: 1.5rem;
+  color: #D69C79;
+  border-top: 1px solid #D69C79;
+  border-bottom: 1px solid #D69C79;
+  width: 5rem;
+  text-align: center;
+
 }
+
+.buttonAddCart {  
+  border: 1px solid #D69C79;
+  border-radius: 3px;
+  color: #D69C79;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.3rem 0;
+  width: 15rem;
+}
+/* End: style for component ItemCount */
 
 /* para pruebas */
  /* .bordeAzul {
@@ -171,3 +188,11 @@ ul {
  .bordeVerde {
     border: 1px solid #08eb08;
  }  */
+
+ /*Estos son los colores de la marca by danny*/
+.colores {
+  color: #E4DCD8;
+  color: #D69C79;
+  color: #E7D0C1;
+  color: #C1B0A8;     
+}
