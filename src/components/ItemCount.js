@@ -8,10 +8,12 @@ const ItemCount = (props) => {
     let onAdd = props.onAdd;
 
     const [contador, setContador] = useState(initial); //HOOKS
+    const [botonActivo, setBotonActivo] = useState(false);
 
     const plus = () => {        
         if (contador < stock){
             setContador(contador + 1);                
+            setBotonActivo(true);
         }        
     }
 
@@ -29,10 +31,10 @@ const ItemCount = (props) => {
                     <div className="containerMinusLess bordeAzul">
                         <button className="buttonMinusPlus " onClick={minus}>-</button>
                         <span className="styleSpan">{contador}</span>
-                        <button className="buttonMinusPlus " onClick={plus}>+</button> 
+                        <button className="buttonMinusPlus " onClick={plus} >+</button> 
                     </div>
                 </div>
-                <button className="buttonAddCart" onClick={() => onAdd(contador)}>
+                <button className="buttonAddCart" onClick={() => onAdd(contador)} disabled={!botonActivo}>
                     ADD TO CART
                 </button>   
             </div>                

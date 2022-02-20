@@ -1,9 +1,19 @@
+import {useState} from 'react';
 import ItemCount from './ItemCount';
+import CheckOut from './CheckOut';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ItemDetail = (props) => {
+    // let vContador = 0;
+    const [itemCount, setItemCount] = useState(0);
 
-    const showAmount = (contador) => alert(`You have selected ${contador} items`)       
+    const showAmount = (contador) => {
+        alert(`You have selected ${contador} items`);        
+        setItemCount(contador);
+        // vContador = contador;
+        // console.log("itemDetail-vContador: " + vContador);
+        // console.log(${contador});
+    }
     return(
     <>                                        
             <div className="container mt-4" style={{'maxWidth': '60rem'}}>
@@ -18,13 +28,16 @@ const ItemDetail = (props) => {
                         <div className="card-body cardDetailDescription bordeVerde">
                             <h5 className="card-title bordeRojo fs-3 fw-bold">{props.item.name}</h5>
                             <p className="card-text bordeRojo">{props.item.description}</p>
-                            <p className="card-text bordeRojo fs-3 fw-bold">$ {props.item.price}</p>                        
-                            <ItemCount stock={5} initial={1} onAdd={showAmount} />                                      
+                            <p className="card-text bordeRojo fs-3 fw-bold">$ {props.item.price}</p> 
+                            {  
+                                itemCount === 0
+                                ?<ItemCount stock={5} initial={itemCount} onAdd={showAmount} />                                      
+                                :<CheckOut />
+                            }                                    
                         </div>
                     </div>
                 </div>
-            </div>                   
-        
+            </div>                           
     </>        
     )
 };
