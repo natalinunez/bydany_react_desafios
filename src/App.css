@@ -172,6 +172,36 @@ ul {
 }
 /* End: style for component ItemCount */
 
+/* Beginning: style for component Cart */
+.botonCantiCarrito {  
+  border: 1px solid #D69C79;
+  color: #D69C79;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.button {  
+  border: 1px solid #D69C79;
+  border-radius: 3px;
+  color: #D69C79;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.4rem 2rem;
+  text-decoration: none;
+}
+
+.imageCart {
+  width: 7rem;
+  height: auto;
+  border-radius: 0.3rem;  
+}
+
+.containerButtonsCart {
+  display: flex;
+  justify-content: space-between;  
+}
+/* End: style for component Cart */
+
 /* para pruebas */
  /* .bordeAzul {
      border: 1px solid #230985;    
@@ -195,4 +225,11 @@ ul {
   color: #D69C79;
   color: #E7D0C1;
   color: #C1B0A8;     
+}
+
+.styleLoading {
+  font-size: 2rem;
+  font-weight: bold;
+  /* margin-left: 12rem; */
+  /* margin-top: 5rem; */
 }

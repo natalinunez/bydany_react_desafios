@@ -5,20 +5,21 @@ const ItemList = ({listItems}) => {
 
     return (
         <>
-            {/* <div className="containerCards bordeAzul" >   */}
-            <div className="container d-flex justify-content-around row m-auto my-5 bordeAzul" >  
-                {   
-                    listItems.map(item => 
-                        <Item
-                            key = {item.id}  
-                            id =  {item.id}       
-                            image = {item.image} 
-                            name = {item.name}
-                            price = {item.price}                        
-                        />                                        
-                    )
-                }   
-            </div>
+ 
+                <div className="container d-flex justify-content-around row m-auto my-5 bordeAzul" >  
+                    {   
+                        listItems.map(item => 
+                            <Item
+                                key = {item.id}  
+                                id =  {item.id}       
+                                image = {item.image} 
+                                name = {item.name}
+                                price = {item.price}                        
+                            />                                        
+                        )
+                    }   
+                </div>
+
         </>
     );
 };

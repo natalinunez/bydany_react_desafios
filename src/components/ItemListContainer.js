@@ -32,8 +32,9 @@ const ItemListContainer = () => {
     }, [idCategory])       
 
     return (                            
-        <>            
-            <ItemList listItems={items} />            
+        <>         
+
+            <ItemList listItems={items} />           
         </>        
     );
 };
