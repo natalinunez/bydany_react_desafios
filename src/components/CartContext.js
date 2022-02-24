@@ -4,6 +4,7 @@ export const CartContext = createContext();
 
 const CartContextProvider = ({children}) => {
 
+    const IGV = 0.18;
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (props, contador) => {
@@ -44,7 +45,6 @@ const CartContextProvider = ({children}) => {
               
               console.log("cartList=");
               console.log(cartList);
-
         }
     }
 
@@ -57,8 +57,27 @@ const CartContextProvider = ({children}) => {
         setCartList([]);
     }
 
+    const calcItemQty = () => {
+        let qtys = cartList.map(item => item.qty);
+        return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+    }
+
+    const calcSubTotal = () => {
+        let precioCantidad = cartList.map(item => item.price * item.qty);
+        return (precioCantidad.reduce(((previousValue, currentValue) => previousValue + currentValue), 0)).toFixed(2);
+    }
+
+    const calcIGV = () => {
+
+        return (calcSubTotal() * IGV).toFixed(2);
+    }
+
+    const calcTotal = () => {
+        return (calcSubTotal() * (1 + IGV)).toFixed(2);
+    }
+
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeItem,clearCart}}>
+        <CartContext.Provider value={{cartList, addToCart, removeItem, clearCart, calcItemQty, calcSubTotal, calcIGV, calcTotal}}>
             {children}
         </CartContext.Provider>
     );

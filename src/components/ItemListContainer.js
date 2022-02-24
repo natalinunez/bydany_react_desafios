@@ -29,12 +29,17 @@ const ItemListContainer = () => {
                 .then((result) => setItems(result))
                 .catch((error) => console.log("Hubo un problema en la petición"));            
         }
+    // }, [items])  //para generar error     
     }, [idCategory])       
 
     return (                            
         <>         
-
-            <ItemList listItems={items} />           
+            {  
+                items.length > 0
+                ? <ItemList listItems={items} />
+                : <p className="styleLoading">Cargando...</p>
+            }
+                       
         </>        
     );
 };
