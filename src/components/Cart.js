@@ -99,9 +99,7 @@ const Cart = () => {
                             <button className="button" >Verificar Ahora</button>                        
                         </div>                    
                         </div>      
-                }                            
-
-                        
+                }                                                    
             </div>           
         </>
     );

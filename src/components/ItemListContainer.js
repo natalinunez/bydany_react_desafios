@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {list, getList} from '../utils/db';
 import ItemList from './ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import db from '../utils/firebaseConfig';
+import { collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
 
@@ -14,22 +15,35 @@ const ItemListContainer = () => {
     const {idCategory} = useParams();
     
     //esto es con destructuracion
+    console.log("category-itemListContainer");
     console.log(idCategory);
     //esto es sin destructuracion
     // console.log(urlParams.idCategory);
 
     //componentDidUpdate
     useEffect(() => {        
-        if (idCategory === undefined){
-            getList(list, 2000)
-                .then((result) => setItems(result))
-                .catch((error) => console.log("Hubo un problema en la petición"));            
-        } else {
-            getList(list.filter(item => item.categoryId === +idCategory), 2000)
-                .then((result) => setItems(result))
-                .catch((error) => console.log("Hubo un problema en la petición"));            
+        const firestoreFetch = async () => {
+            const querySnapshot = await getDocs(collection(db, "products"));            
+                return querySnapshot.docs.map( document => ({
+                    id: document.id,
+                    ...document.data()
+                }));                                             
         }
-    // }, [items])  //para generar error     
+
+        firestoreFetch()
+            .then(result => {
+                if (idCategory === undefined) {
+                    setItems(result);    
+                } else {
+                    let forCategory = result.filter(item => item.category == idCategory)
+                    setItems(forCategory);
+                    console.log("forCategory");
+                    console.log(forCategory);                    
+                }                            
+
+            })
+            .catch(error => console.log(error));    
+
     }, [idCategory])       
 
     return (                            

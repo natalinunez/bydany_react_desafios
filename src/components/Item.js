@@ -1,10 +1,9 @@
 import {Link} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-const Item = (props) => {
-    
+
+const Item = (props) => {    
     return(
-        <>   
-                           
+        <>                              
             <div className="card my-3 p-2 cardHover" style={{'width': '18rem'}}>
                 <img src={props.image} className="cardImage" alt={props.name}/>
                 <div className="card-body m-auto text-center ">
@@ -15,7 +14,6 @@ const Item = (props) => {
                     </Link>
                 </div>
             </div>            
-
         </>
     );
 };

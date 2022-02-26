@@ -20,13 +20,13 @@ const ItemDetail = (props) => {
             ?
                 <div className="container mt-4" style={{'maxWidth': '60rem'}}>
                     <div className="row g-0 bordeRojo">
-                        <div className="col-md-6 bordeAzul">         
+                        <div className="col-sm-6 col-md-6 col-lg-6 bordeAzul">         
                             <figure className="figura">
                                 <img src={props.item.image} className="imageDetail bordeAmarrillo" 
                                     alt={props.item.name} />                        
                             </figure>       
                         </div>
-                        <div className="col-md-6 bordeAzul">
+                        <div className="col-sm-6 col-md-6 col-lg-6 bordeAzul">
                             <div className="card-body cardDetailDescription bordeVerde">
                                 <h5 className="card-title bordeRojo fs-3 fw-bold">{props.item.name}</h5>
                                 <p className="card-text bordeRojo">{props.item.description}</p>
