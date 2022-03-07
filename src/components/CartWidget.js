@@ -9,7 +9,7 @@ const CartWidget = () => {
     return (
         <div className="containerIconCart bordeVerde " >        
             <Link to='/cart'>
-                <BsHandbag className="styleIconCart bordeAzul"/>
+                <BsHandbag className="styleIconCart bordeAzul"/>                
                 {
                     test.cartList.length > 0 &&
                         <div className="styleBubbleCart bordeRojo">{test.calcItemQty()}</div> 

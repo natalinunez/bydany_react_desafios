@@ -18,25 +18,27 @@ const ItemDetail = (props) => {
         {  
             props.item && props.item.image
             ?
-                <div className="container mt-4" style={{'maxWidth': '60rem'}}>
-                    <div className="row g-0 bordeRojo">
-                        <div className="col-sm-6 col-md-6 col-lg-6 bordeAzul">         
-                            <figure className="figura">
-                                <img src={props.item.image} className="imageDetail bordeAmarrillo" 
-                                    alt={props.item.name} />                        
-                            </figure>       
-                        </div>
-                        <div className="col-sm-6 col-md-6 col-lg-6 bordeAzul">
-                            <div className="card-body cardDetailDescription bordeVerde">
-                                <h5 className="card-title bordeRojo fs-3 fw-bold">{props.item.name}</h5>
-                                <p className="card-text bordeRojo">{props.item.description}</p>
-                                <p className="card-text bordeRojo fs-3 fw-bold">$ {props.item.price}</p> 
-                                {  
-                                    itemCount === 0
-                                    ?<ItemCount stock={props.item.stock} initial={itemCount} onAdd={showAmount} />                                      
-                                    :<CheckOut />
-                                }                                    
+                // <div className="container mt-4 fondo" style={{'maxWidth': '60rem'}}>
+                <div className="containerDetail mt-4 fondo" >
+                    <div className="card mb-3" style={{'maxWidth': '60rem'}} >                    
+                        <div className="row g-0">
+                            <div className="col-sm-5 col-md-5 col-lg-4 bordeAzul"> 
+                                <img src={props.item.image} className="img-fluid imageDetail" 
+                                    alt={props.item.name} />                  
                             </div>
+                            <div className="col-sm-7 col-md-7 col-lg-8 bordeAzul">
+                                <div className="card-body cardDetailDescription bordeVerde">
+                                    <h5 className="card-title bordeRojo fs-3 fw-bold">{props.item.name}</h5>
+                                    <p className="card-text bordeRojo">{props.item.description}</p>
+                                    <p className="card-text bordeRojo fs-3 fw-bold">$ {props.item.price}</p> 
+                                    <p className="sizeTipografia bordeRojo"><span className="fw-bold">{props.item.stock}</span> unidades en stock</p>
+                                    {  
+                                        itemCount === 0
+                                        ?<ItemCount stock={props.item.stock} initial={itemCount} onAdd={showAmount} />                                      
+                                        :<CheckOut />
+                                    }                                    
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>   

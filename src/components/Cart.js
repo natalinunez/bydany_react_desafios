@@ -2,11 +2,50 @@ import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import { CartContext } from './CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
 
 const Cart = () => {
     const test = useContext(CartContext);
     test.calcSubTotal();
     console.log(test);
+
+    const createOrder = () => {
+        let order = {
+            buyer: {
+                email: "leo@messi.com",
+                name: "Leo Messi",
+                phone: "123456789"
+            },
+            date: serverTimestamp(),
+            items: test.cartList.map( item => {
+                return{ id: item.id, price: item.price, title: item.name, qty: item.qty}
+            }),
+            total: test.calcTotal()
+        };
+        console.log(order);
+
+        const createOrderInFirestore = async () => {
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
+        };
+    
+        createOrderInFirestore()
+            .then(result => 
+                {                    
+                    alert('Tu orden ha sido creada:' + result.id);
+                    test.cartList.map( async (item) => {
+                        const itemRef = doc(db, 'products', item.id);
+                        await updateDoc(itemRef, {
+                            stock: increment(-item.qty)
+                        })
+                    })
+                    test.clearCart();
+                })
+            .catch(error => console.log(error));    
+    };
 
     return(
         <>
@@ -96,7 +135,8 @@ const Cart = () => {
                                     <p className="bordeAzul">{test.calcTotal()}</p>                                    
                                 </div>
                             </div>    
-                            <button className="button" >Verificar Ahora</button>                        
+                            <button className="button" onClick={createOrder}>Verificar Ahora</button>                        
+
                         </div>                    
                         </div>      
                 }                                                    

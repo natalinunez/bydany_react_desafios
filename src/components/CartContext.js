@@ -10,9 +10,14 @@ const CartContextProvider = ({children}) => {
     const addToCart = (props, contador) => {
 
         const productFinded= cartList.find((item) => item.id === props.item.id)
-        console.log("encontrado");
+
+        console.log("encontrado finded");
         console.log(productFinded);
-    
+
+        const productMap = cartList.map((item) => item)
+        console.log("productMap");
+        console.log(productMap);
+            
         if ( typeof productFinded === "undefined" ) {
             console.log("NO encontrado");
             setCartList([
@@ -21,8 +26,9 @@ const CartContextProvider = ({children}) => {
                 id: props.item.id,
                 name: props.item.name,
                 image: props.item.image,
-                price: props.item.price,
-                qty: contador
+                price: props.item.price,                
+                qty: contador,
+                stock: props.item.stock    
                 }
             ]);          
         } else {
@@ -49,6 +55,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const removeItem = (itemId) => {
+        console.log("paso x removeList=");
         const newCartList = cartList.filter((item) => item.id !== itemId);
         setCartList(newCartList);
     }

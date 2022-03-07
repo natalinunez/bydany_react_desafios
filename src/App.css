@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   color: #D69C79;
+  font: 'arial';
 }
 
 a {
@@ -10,13 +11,19 @@ a {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;  
+  font-size: 1rem!;
+  margin: 0!important;
+  padding: 0!important;     
 }
 
-ul {
+ul , li{  
   list-style: none;
+  margin: 0!important;
+  padding: 0!important;   
+}
+
+body{
+  font-family: "arial"!important;
 }
 
 /* Beginning: style for component NavBar */
@@ -112,19 +119,25 @@ ul {
 /* End: style for component Item */
 
 /* Beginning: style for component ItemDetail */
-.figura {
+.containerDetail {
   display: flex;
   justify-content: center;
 }
 
-.imageDetail {
-  width: 25rem;
-  height: auto;
-  border-radius: 0.3rem;  
+.imageDetail {  
+  margin: 0;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  
 }
 
 .cardDetailDescription {
-  margin: 0 2rem;
+  /* margin: 0 0; */
+  
+}
+
+.sizeTipografia {
+  font-size: 1.4rem;
 }
 /* End: style for component ItemDetail */
 
@@ -132,43 +145,38 @@ ul {
 .containerCount {
   display: flex;  
   flex-direction: column;
-  gap: 1.8rem;
-  height: 2.5rem;  
 }
 
-.containerMinusLess {
+.containerButtons {  
+  display: flex;
+  justify-content: space-between;
+  margin: 0!important;  
+  padding: 0!important;  
+}
+
+.containerUl {
   display: flex;
 }
 
-.buttonMinusPlus {  
-  border: 1px solid #D69C79;
-  border-radius: 3px;
-  color: #D69C79;
-  font-size: 1.2rem;
+.styleIconMinusPlus {
+  /* color: #ad5d2b; */
+  font-size: 1.3rem;    
   font-weight: bold;
-  padding: 0;
-  margin: 0;
-  width: 2.5rem;
 }
 
 .styleSpan {
-  font-size: 1.5rem;
-  color: #D69C79;
-  border-top: 1px solid #D69C79;
-  border-bottom: 1px solid #D69C79;
-  width: 5rem;
-  text-align: center;
-
+  color: #D69C79!important;
 }
 
 .buttonAddCart {  
   border: 1px solid #D69C79;
   border-radius: 3px;
   color: #D69C79;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   padding: 0.3rem 0;
-  width: 15rem;
+  min-width: 8rem;
+  height: 2.4rem;
 }
 /* End: style for component ItemCount */
 
@@ -255,4 +263,63 @@ ul {
   font-weight: bold;
   /* margin-left: 12rem; */
   /* margin-top: 5rem; */
+}
+
+/* cuando el valor > 1200 valor: 1201, 1202, 1203 */
+@media screen and (min-width: 1200px) {
+  .fondo {
+    /* background-color: pink; */
+  }
+}
+
+/* valor > 960 and valor <= 1200  valores: 961, 962, 963, ...., 1200 */
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+  .fondo {
+    background-color: skyblue;
+  }
+}
+/* valor > 768 and valor <= 960  valores: 769, 770, 771, ...., 960 */
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .fondo {
+    background-color: green;
+  }
+}
+/* 531 hasta 768  */
+@media screen and (min-width: 530px) and (max-width: 768px) {
+  .fondo {
+    background-color: yellow;
+  }
+}
+
+@media screen and (min-width: 460px) and (max-width: 530px) {
+  .fondo {
+    background-color: rgb(226, 140, 11);
+  }
+}
+
+/* 381, 382, 383, ...,460  */
+@media screen and (min-width: 380px) and (max-width: 460px) {
+  .fondo {
+    background-color: red;
+  }
+}
+
+/* 380, 379, 378, 377 */
+@media screen and (max-width: 380px) {
+  .fondo {
+    background-color: blue;
+  }
+  .containerButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .containerCount {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+  }
 }
