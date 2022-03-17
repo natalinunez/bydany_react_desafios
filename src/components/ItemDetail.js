@@ -9,7 +9,8 @@ const ItemDetail = (props) => {
     const test = useContext(CartContext);
 
     const showAmount = (contador) => {
-        alert(`You have selected ${contador} items`);        
+        // alert(`You have selected ${contador} items`);        
+        alert(`Usted ha seleccionado ${contador} elemento(s)`);        
         setItemCount(contador);
         test.addToCart(props, contador);
     }
@@ -18,7 +19,6 @@ const ItemDetail = (props) => {
         {  
             props.item && props.item.image
             ?
-                // <div className="container mt-4 fondo" style={{'maxWidth': '60rem'}}>
                 <div className="containerDetail mt-4 fondo" >
                     <div className="card mb-3" style={{'maxWidth': '60rem'}} >                    
                         <div className="row g-0">
@@ -29,7 +29,7 @@ const ItemDetail = (props) => {
                             <div className="col-sm-7 col-md-7 col-lg-8 bordeAzul">
                                 <div className="card-body cardDetailDescription bordeVerde">
                                     <h5 className="card-title bordeRojo fs-3 fw-bold">{props.item.name}</h5>
-                                    <p className="card-text bordeRojo">{props.item.description}</p>
+                                    <p className="card-text styleCardText bordeRojo">{props.item.description}</p>
                                     <p className="card-text bordeRojo fs-3 fw-bold">$ {props.item.price}</p> 
                                     <p className="sizeTipografia bordeRojo"><span className="fw-bold">{props.item.stock}</span> unidades en stock</p>
                                     {  

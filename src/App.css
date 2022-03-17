@@ -131,9 +131,8 @@ body{
   
 }
 
-.cardDetailDescription {
-  /* margin: 0 0; */
-  
+.styleCardText {
+  text-align: justify;
 }
 
 .sizeTipografia {
@@ -175,7 +174,7 @@ body{
   font-size: 1rem;
   font-weight: bold;
   padding: 0.3rem 0;
-  min-width: 8rem;
+  min-width: 10rem;
   height: 2.4rem;
 }
 /* End: style for component ItemCount */
@@ -212,12 +211,12 @@ body{
 .styleResumeOrder {
   display: flex;
   justify-content: center;
-  width: 10rem;
+  width: 12rem;
   gap: 3rem;
 }
 
 .styleLabel {
-  width: 5rem;
+  width: 9rem;
 }
 
 .containerResumeOrder {
@@ -275,39 +274,39 @@ body{
 /* valor > 960 and valor <= 1200  valores: 961, 962, 963, ...., 1200 */
 @media screen and (min-width: 960px) and (max-width: 1200px) {
   .fondo {
-    background-color: skyblue;
+    /* background-color: skyblue; */
   }
 }
 /* valor > 768 and valor <= 960  valores: 769, 770, 771, ...., 960 */
 @media screen and (min-width: 768px) and (max-width: 960px) {
   .fondo {
-    background-color: green;
+    /* background-color: green; */
   }
 }
 /* 531 hasta 768  */
 @media screen and (min-width: 530px) and (max-width: 768px) {
   .fondo {
-    background-color: yellow;
+    /* background-color: yellow; */
   }
 }
 
 @media screen and (min-width: 460px) and (max-width: 530px) {
   .fondo {
-    background-color: rgb(226, 140, 11);
+    /* background-color: rgb(226, 140, 11); */
   }
 }
 
 /* 381, 382, 383, ...,460  */
 @media screen and (min-width: 380px) and (max-width: 460px) {
   .fondo {
-    background-color: red;
+    /* background-color: red; */
   }
 }
 
 /* 380, 379, 378, 377 */
 @media screen and (max-width: 380px) {
   .fondo {
-    background-color: blue;
+    /* background-color: blue; */
   }
   .containerButtons {
     display: flex;

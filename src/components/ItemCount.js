@@ -46,7 +46,7 @@ const ItemCount = (props) => {
                         </li>                    
                     </ul>
                     <button className="buttonAddCart" onClick={() => onAdd(contador)} disabled={!botonActivo}>
-                          ADD TO CART
+                          Agregar al carrito
                     </button>      
                 </div>
 

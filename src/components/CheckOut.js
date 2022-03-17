@@ -6,7 +6,7 @@ const CheckOut = () => {
         <>
         <Link to='/cart'>
             <button className="buttonAddCart" >
-                    CHECKOUT
+                    Verificar
             </button>           
         </Link>
         </>
