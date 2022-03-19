@@ -1,6 +1,9 @@
 # Proyecto By Dany
 By Dany vende joyas y bisutería artesanal, como: aretes, collares y pulseras. Esta es una aplicación web que muestra los productos agrupados por categoria o por todos los productos. Se puede seleccionar un producto para ver una descripción más detallada y agregarlo al carrito de compras para visualizar su resumen de pedido.
 
+##url de la aplicación web
+https://gallant-carson-617acc.netlify.app/
+
 
 ## Deployment 📦
 
